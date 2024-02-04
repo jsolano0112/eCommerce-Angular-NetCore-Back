@@ -13,6 +13,10 @@ builder.Services.AddDbContext<CardiganDBContext>(options => options.UseSqlServer
     builder.Configuration.GetConnectionString("DefaultConnection")));
 
 builder.Services.AddTransient<ICardiganService, CardiganDataAccessLayer>();
+builder.Services.AddTransient<IOrderService, OrderDataAccessLayer>();
+builder.Services.AddTransient<ICartService, CartDataAccessLayer>();
+builder.Services.AddTransient<IUserService, UserDataAccessLayer>();
+
 
 var app = builder.Build();
 
